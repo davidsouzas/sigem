@@ -25,13 +25,22 @@ class Home extends CI_Controller {
 	 * @copyright 2019 IMAP
 	 */
 	public function save(){
-		$this->HomeModels->savedata();
+		$data = array(
+			"nome"			 			=> $this->input->post('nome'),
+			"data_inicio"	 			=> $this->input->post('data_inicio'),
+			"data_termino"	 			=> $this->input->post('data_termino'),
+			"periodo_letivo_encerrado" => $this->input->post('periodo_letivo_encerrado') == '1'? 1: 0,
+			"periodo_matricula"		    => $this->input->post('periodo_matricula') == '1'? 1: 0,
+			"cliente_id"			    => $this->input->post('cliente_id')
+		);
+		$this->HomeModels->savedata($data);
 		redirect('home/index');		
 	}
 
 	public function delete(){
-		$this->HomeModels->excluir();
-		redirect('home/index');		
+		$id = $this->input->get('id');
+		$this->HomeModels->excluir($id);
+		//redirect('home/index');		
 	}
 }
 ?>

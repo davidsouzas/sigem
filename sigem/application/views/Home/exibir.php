@@ -53,7 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<td><?=$periodo_letivo?></td>
 					<td><?=$periodo_matricula?></td>
 					<td><?=$cliente?></td>
-					<td><a href="delete/?<?= $campo['cliente_id']?>">Excluir</a></td>
+					<td><a href="delete/?id=<?= $campo['id']?>">Excluir</a></td>
 				<tr>
 			<?php } ?>
 		<tr>
