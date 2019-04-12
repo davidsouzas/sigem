@@ -1,0 +1,19 @@
+.n{
+	color:red;
+}
+
+table.table_listar{
+	padding: 1px;
+	border-collapse: collapse;
+}
+
+.form_home{
+	text-align: justify;
+	padding: 2px;
+	width: 100%; 
+}
+
+.right{
+/*	position: relative;
+ 	float: right; */
+}
