@@ -8,10 +8,11 @@ class Home extends CI_Controller {
 	{
 	$this->load->view('Home/index');
 	}
+
 	/**
 	 * Lista os dados do banco
+	 * @author David Souza
 	 */
-
 	public function listar()
 	{
 		$lista = $this->HomeModels->listar();
@@ -21,8 +22,6 @@ class Home extends CI_Controller {
 	/**
 	 * Coleta os dados do formulario e passa para a função que inicializa a inserção no banco
 	 * @author David Souza
-	 * @version 1.0
-	 * @copyright 2019 IMAP
 	 */
 	public function save(){
 		$data = array(
@@ -36,11 +35,14 @@ class Home extends CI_Controller {
 		$this->HomeModels->savedata($data);
 		redirect('home/index');		
 	}
-
+	/**
+	 * Metodo que chama a função excluir, para deletar 1 registro
+	 * @author David Souza
+	 */
 	public function delete(){
 		$id = $this->input->get('id');
 		$this->HomeModels->excluir($id);
-		//redirect('home/index');		
+		redirect('home/listar');		
 	}
 }
 ?>

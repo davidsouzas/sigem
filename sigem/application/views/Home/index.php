@@ -96,36 +96,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<?php echo form_submit($data); ?>
 </p> 
 <?php echo form_close(); ?>
-
-<!--
-<div>
-	<?php foreach ($linhas as $campo) {?>
-		<?= $campo['Nome']?>
-	<?php } ?>
-</div>
-
-<div>
-	<form action="Home/save" method="post">
-		<label for="nome">Nome:</label>
-		<input type="text" name="nome" id="nome">
-	</br>
-		<label for="nome">Data de Início:</label>
-		<input type="date" name="data_inicio" id="data_inicio">
-	</br>
-		<label for="nome">Data de Término:</label>
-		<input type="date" name="data_termino" id="data_termino">
-	</br>
-		<label for="nome">Periodo Letivo Encerrado ?</label>
-		<input type="radio" name="preriodo_letivo_encerrado" id="preriodo_letivo_encerrado">
-	</br>
-		<label for="nome">Periodo de Matricula Ativo ?</label>
-		<input type="radio" name="periodo_matricula" id="periodo_matricula">
-	</br>
-		<label for="nome">Código da instituição:</label>
-		<input type="text" name="cliente_id" id="cliente_id">
-	</br>
-		<input type="submit" value="Gravar">
-	</form> 
-</div> -->
 </body>
 </html>
