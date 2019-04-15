@@ -48,7 +48,6 @@ class Home extends CI_Controller {
 	public function editar(){
 		$id = $this->input->get('id');
 		$data['row'] = $this->HomeModels->getData($id);
-		//var_dump($data);
 		$this->load->view('Home/update', $data);
 	}
 
@@ -59,14 +58,12 @@ class Home extends CI_Controller {
 			"data_termino"	 			=> $this->input->post('data_termino'),
 			"periodo_letivo_encerrado" => $this->input->post('periodo_letivo_encerrado') == '1'? 1: 0,
 			"periodo_matricula"		    => $this->input->post('periodo_matricula') == '1'? 1: 0,
-			"cliente_id"			    => $this->input->post('cliente_id')
+			"cliente_id"			    => $this->input->post('cliente_id'),
+			"id"						=> $this->input->post('_id')
 		);
-		// Aqui 
-		$id = $this->input->post();
-		var_dump($id);
-		$this->HomeModels->atualizar($data, $id);
-
-		//redirect('Home/listar');
+		
+		$this->HomeModels->atualizar($data);
+		redirect('Home/listar');
 	}
 }
 ?>

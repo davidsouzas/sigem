@@ -20,13 +20,12 @@ class HomeModels extends CI_Model
 	}
 
 	public function getData($id){
-	//	$this->db->where('id', $id);
 		$query = $this->db->query('SELECT * FROM ano_letivo where id =' .$id);
-	//	$update = $this->db->update('ano_letivo', $data);
 		return $query->row();
 	}
 
-	public function atualizar($data, $id){
+	public function atualizar($data){
+		$id = $data['id'];	
 		$this->db->where('id', $id);
 		$this->db->update('ano_letivo', $data);
 	}
@@ -37,7 +36,6 @@ class HomeModels extends CI_Model
 	 */
 	public function excluir($id){		
 		$deletar = $this->db->delete('ano_letivo', array('id' => $id));
-		var_dump($deletar);
 		return $deletar;
 	}
 	/**

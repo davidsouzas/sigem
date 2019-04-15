@@ -14,6 +14,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	$attributes = array('class' => 'form_home', 'style' => "border: 1px solid black");
 	echo form_open('Home/update', $attributes);
 ?>
+
+	<?php
+		$data = array(
+			'name' => '_id',
+			'value' => $row->id,
+			'id' => '_id',
+			'type' => 'hidden'
+		);
+	?>
+	<?php echo form_input($data); ?>
+
 <p>
 	<?php echo form_label("Nome:"); ?>
 	<?php
@@ -92,8 +103,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			'placeholder' => 'Insira o codigo da instituição'
 		);
 	?>
-	<?php $dataid = $row->id?>
-	<?php echo form_input($data, $dataid); ?>
+	<?php echo form_input($data); ?>
 </p> 
 
 <p>
