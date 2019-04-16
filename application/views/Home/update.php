@@ -83,7 +83,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		$data = array(
 			'name' => 'periodo_matricula',			
 			'id' => 'periodo_matricula',
-			'checked' => 'checked'
+			'checked' => 'checked',
+			'value' => ''
 		);
 
 		if ($row->periodo_matricula != 1) {

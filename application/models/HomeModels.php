@@ -18,14 +18,17 @@ class HomeModels extends CI_Model
 		$insert = $this->db->insert('ano_letivo', $data);	
 		return $insert;
 	}
-
+	/**
+	 * Seleciona um registro do banco
+	 * @param int $id Primary Key para ser usado como condição na busca do registro
+	 */
 	public function getData($id){
 		$query = $this->db->query('SELECT * FROM ano_letivo where id =' .$id);
 		return $query->row();
 	}
 
 	public function atualizar($data){
-		$id = $data['id'];	
+		$id = $data['id'];			
 		$this->db->where('id', $id);
 		$this->db->update('ano_letivo', $data);
 	}

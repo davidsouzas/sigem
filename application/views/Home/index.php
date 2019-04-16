@@ -56,7 +56,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			'name' => 'periodo_letivo_encerrado',
 			'id' => 'periodo_letivo_encerrado',
 			'value' => '1'
-			//'checked' => '0'
 		);
 	?>
 	<?php echo form_checkbox($data); ?>
@@ -67,7 +66,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			'name' => 'periodo_matricula',
 			'id' => 'periodo_matricula',
 			'value' => '1'
-			//'checked' => '0'
 		);
 	?>
 	<?php echo form_checkbox($data); ?>

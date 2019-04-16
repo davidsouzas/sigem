@@ -36,7 +36,7 @@ class Home extends CI_Controller {
 		redirect('home/index');		
 	}
 	/**
-	 * Metodo que chama a função excluir, para deletar 1 registro
+	 * Chama a função excluir, para deletar 1 registro.
 	 * @author David Souza
 	 */
 	public function delete(){
@@ -44,20 +44,25 @@ class Home extends CI_Controller {
 		$this->HomeModels->excluir($id);
 		redirect('home/listar');		
 	}
-
+	/**
+	 * 
+	 */
 	public function editar(){
 		$id = $this->input->get('id');
 		$data['row'] = $this->HomeModels->getData($id);
-		$this->load->view('Home/update', $data);
+		$this->load->view('Home/update', $data);		
 	}
-
-	public function update(){
+	/**
+	 * Recebe os dados pós alterações e passa para a função que atualiza o banco de dados
+	 */
+	public function update(){		
+		
 		$data = array(
 			"nome"			 			=> $this->input->post('nome'),
 			"data_inicio"	 			=> $this->input->post('data_inicio'),
 			"data_termino"	 			=> $this->input->post('data_termino'),
-			"periodo_letivo_encerrado" => $this->input->post('periodo_letivo_encerrado') == '1'? 1: 0,
-			"periodo_matricula"		    => $this->input->post('periodo_matricula') == '1'? 1: 0,
+			"periodo_letivo_encerrado"  => is_null($this->input->post('periodo_letivo_encerrado')) ? 0: 1,
+			"periodo_matricula"		    => is_null($this->input->post('periodo_matricula')) ? 0: 1,
 			"cliente_id"			    => $this->input->post('cliente_id'),
 			"id"						=> $this->input->post('_id')
 		);
